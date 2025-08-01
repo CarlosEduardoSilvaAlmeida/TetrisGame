@@ -1,27 +1,19 @@
 #include <raylib.h>
-#include "ball.h"
 
 int main() 
 {
-    const Color darkGreen = {20, 160, 133, 255};
-    
-    constexpr int screenWidth = 800;
-    constexpr int screenHeight = 600;
-    
-    Ball ball;
-    
-    InitWindow(screenWidth, screenHeight, "My first RAYLIB program!");
-    SetTargetFPS(60);
-    
-    while (!WindowShouldClose())
-    {
-        ball.Update();
-        
-        BeginDrawing();
-            ClearBackground(darkGreen);
-            ball.Draw();
-        EndDrawing();
+
+    Color darkBlue = {44, 44, 127, 255};
+    InitWindow(300, 600, "raylib Tetris");
+    SetTargetFPS(60); // Define quantas vezes o loop principal roda por segundo
+    while(WindowShouldClose() == false){ // verifica se ESC ou sair foi precionado
+
+        BeginDrawing(); // Desenha uma tela branca
+        ClearBackground(darkBlue);
+
+
+        EndDrawing(); // Fecha a tela
     }
-    
+
     CloseWindow();
 }
